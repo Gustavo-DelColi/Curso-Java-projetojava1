@@ -15,7 +15,17 @@ public class PrimeiraClasseJava {
 		private String sobrenome;
 		
 		private int idade;
+		
+		private Date DataNascimento;
 				
+		public Date getDataNascimento() {
+			return DataNascimento;
+		}
+
+		public void setDataNascimento(Date dataNascimento) {
+			DataNascimento = dataNascimento;
+		}
+
 		public int getIdade() {
 			return idade;
 		}
