@@ -1,5 +1,7 @@
 package cursojava.executavel;
 
+import java.sql.Date;
+
 public class PrimeiraClasseJava {
 
 	/*Main é um metodo auto executavel em Java*/
@@ -16,14 +18,14 @@ public class PrimeiraClasseJava {
 		
 		private int idade;
 		
-		private Date DataNascimento;
+		private Date dataNascimento;
 				
 		public Date getDataNascimento() {
-			return DataNascimento;
+			return dataNascimento;
 		}
 
 		public void setDataNascimento(Date dataNascimento) {
-			DataNascimento = dataNascimento;
+			this.dataNascimento = dataNascimento;
 		}
 
 		public int getIdade() {
