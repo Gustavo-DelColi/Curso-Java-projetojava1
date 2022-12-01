@@ -7,6 +7,8 @@ public class PrimeiraClasseJava {
 	/* Main é um metodo auto executavel em Java */
 	public static void main(String[] args) {
 
+		/* new Aluno() é uma instancia (Criação de Obejto)*/
+		/*aluno1 é uma referencia para o objeto aluno*/
 		Aluno aluno1 = new Aluno(); /*Aqui será o João*/
 		
 		Aluno aluno2 = new Aluno(); /*Aqui será o Pedro*/
@@ -16,5 +18,6 @@ public class PrimeiraClasseJava {
 		Aluno aluno4 = new Aluno("Maria");
 
 		Aluno aluno5 = new Aluno("Jose", 50);
+		
 	}
 }
