@@ -7,10 +7,14 @@ public class PrimeiraClasseJava {
 	/* Main é um metodo auto executavel em Java */
 	public static void main(String[] args) {
 
-		/* Objeto ainda não existe na memoria*/
+		Aluno aluno1 = new Aluno(); /*Aqui será o João*/
 		
-		Aluno aluno1;
+		Aluno aluno2 = new Aluno(); /*Aqui será o Pedro*/
 		
+		Aluno aluno3 = new Aluno(); /*Aqui será o Alex*/
+		
+		Aluno aluno4 = new Aluno("Maria");
 
+		Aluno aluno5 = new Aluno("Jose", 50);
 	}
 }
