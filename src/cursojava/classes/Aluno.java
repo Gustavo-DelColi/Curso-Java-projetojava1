@@ -16,11 +16,15 @@ public class Aluno {
 	private String dataMatricula;
 	private String nomeEscola;
 	private String serieMatriculado;
-	
+
 	private double nota1;
+	private String disciplina1;
 	private double nota2;
+	private String disciplina2;
 	private double nota3;
+	private String disciplina3;
 	private double nota4;
+	private String disciplina4;
 
 	public Aluno() { /* Cria os dados na memoria - Sendo padrão do Java */
 
@@ -150,38 +154,73 @@ public class Aluno {
 	public void setNota4(double nota4) {
 		this.nota4 = nota4;
 	}
-	
-	/*Método que retorna a média do aluno*/
+
+	/* Método que retorna a média do aluno */
 	public double getMediaNota() {
 		return (nota1 + nota2 + nota3 + nota4) / 4;
 	}
-	
-	/*Metodo que retorna true para aprovado e false para reprovado*/
+
+	public String getDisciplina1() {
+		return disciplina1;
+	}
+
+	public void setDisciplina1(String disciplina1) {
+		this.disciplina1 = disciplina1;
+	}
+
+	public String getDisciplina2() {
+		return disciplina2;
+	}
+
+	public void setDisciplina2(String disciplina2) {
+		this.disciplina2 = disciplina2;
+	}
+
+	public String getDisciplina3() {
+		return disciplina3;
+	}
+
+	public void setDisciplina3(String disciplina3) {
+		this.disciplina3 = disciplina3;
+	}
+
+	public String getDisciplina4() {
+		return disciplina4;
+	}
+
+	public void setDisciplina4(String disciplina4) {
+		this.disciplina4 = disciplina4;
+	}
+
+	/* Metodo que retorna true para aprovado e false para reprovado */
 	public boolean getAlunoAprovado() {
 		double media = this.getMediaNota();
 		if (media >= 70) {
 			return true;
-		}else {
+		} else {
 			return false;
 		}
 	}
-	
+
 	public String getAlunoAprovado2() {
 		double media = this.getMediaNota();
 		if (media >= 70) {
 			return "Aluno está aprovado";
-		}else {
+		} else {
 			return "Aluno está reprovado";
 		}
 	}
+
+
 
 	@Override
 	public String toString() {
 		return "Aluno [nome=" + nome + ", idade=" + idade + ", dataNascimento=" + dataNascimento + ", registroGeral="
 				+ registroGeral + ", numeroCpf=" + numeroCpf + ", nomeMae=" + nomeMae + ", nomePai=" + nomePai
 				+ ", dataMatricula=" + dataMatricula + ", nomeEscola=" + nomeEscola + ", serieMatriculado="
-				+ serieMatriculado + ", nota1=" + nota1 + ", nota2=" + nota2 + ", nota3=" + nota3 + ", nota4=" + nota4
-				+ "]";
+				+ serieMatriculado + ", nota1=" + nota1 + ", disciplina1=" + disciplina1 + ", nota2=" + nota2
+				+ ", disciplina2=" + disciplina2 + ", nota3=" + nota3 + ", disciplina3=" + disciplina3 + ", nota4="
+				+ nota4 + ", disciplina4=" + disciplina4 + "]";
 	}
 
 	@Override
@@ -201,8 +240,4 @@ public class Aluno {
 		return Objects.equals(nome, other.nome) && Objects.equals(numeroCpf, other.numeroCpf);
 	}
 
-	
-
-	
-	
 }
