@@ -18,11 +18,9 @@ public class Aluno {
 	private String dataMatricula;
 	private String nomeEscola;
 	private String serieMatriculado;
-	
+
 	private List<Disciplina> disciplinas = new ArrayList<Disciplina>();
 
-	
-	
 	public List<Disciplina> getDisciplinas() {
 		return disciplinas;
 	}
@@ -130,18 +128,15 @@ public class Aluno {
 
 	/* Método que retorna a média do aluno */
 	public double getMediaNota() {
-		
+
 		double somaNotas = 0.0;
-		
+
 		for (Disciplina disciplina : disciplinas) {
 			somaNotas += disciplina.getNota();
 		}
-		
+
 		return somaNotas / disciplinas.size();
 	}
-	
-	
-	
 
 	@Override
 	public String toString() {
@@ -163,8 +158,12 @@ public class Aluno {
 
 	public String getAlunoAprovado2() {
 		double media = this.getMediaNota();
-		if (media >= 70) {
-			return "Aluno está aprovado";
+		if (media >= 50) {
+			if (media >= 70) {
+				return "Aluno está aprovado";
+			} else {
+				return "Aluno em recuperação";
+			}
 		} else {
 			return "Aluno está reprovado";
 		}
