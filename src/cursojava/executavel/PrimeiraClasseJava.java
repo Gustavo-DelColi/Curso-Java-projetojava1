@@ -1,6 +1,8 @@
 package cursojava.executavel;
 
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 import java.util.concurrent.ThreadPoolExecutor.DiscardOldestPolicy;
 
 import javax.swing.JOptionPane;
@@ -12,11 +14,15 @@ public class PrimeiraClasseJava {
 
 	/* Main é um metodo auto executavel em Java */
 	public static void main(String[] args) {
+		
+		List<Aluno> alunos = new ArrayList<Aluno>();
 
+		for (int qtd = 1 ; qtd <=2; qtd++) {
+		
 		/* new Aluno() é uma instancia (Criação de Obejto) */
 		/* aluno1 é uma referencia para o objeto aluno */
 
-		String nome = JOptionPane.showInputDialog("Qual o nome do aluno?");
+		String nome = JOptionPane.showInputDialog("Qual o nome do aluno "+qtd+" ?");
 		/*
 		 * String idade = JOptionPane.showInputDialog("Qual a idade do aluno?"); String
 		 * dataNascimento = JOptionPane.showInputDialog("Data de nascimento?"); String
@@ -66,9 +72,17 @@ public class PrimeiraClasseJava {
 			}
 		}
 
-		System.out.println(aluno1); /* Descrição do objeto na memória */
-		System.out.println("Média do aluno = " + aluno1.getMediaNota());
-		System.out.println("Resultado = " + aluno1.getAlunoAprovado2());
+		alunos.add(aluno1);
+		}
+		
+		for (Aluno aluno : alunos) {
+			
+			System.out.println(aluno); /* Descrição do objeto na memória */
+			System.out.println("Média do aluno = " + aluno.getMediaNota());
+			System.out.println("Resultado = " + aluno.getAlunoAprovado2());
+			System.out.println("-------------------------------------------------------");
+		}
+		
 
 	}
 }
