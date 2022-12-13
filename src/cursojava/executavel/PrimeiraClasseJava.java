@@ -16,7 +16,15 @@ public class PrimeiraClasseJava {
 
 	/* Main é um metodo auto executavel em Java */
 	public static void main(String[] args) {
+		
+		String login = JOptionPane.showInputDialog("Informe o login");
+		String senha = JOptionPane.showInputDialog("Informe a senha");
 
+		if (login.equalsIgnoreCase("admin") &&
+				senha.equalsIgnoreCase("admin")) {
+			
+		
+		
 		List<Aluno> alunos = new ArrayList<Aluno>();
 		
 		/*É uma lista que dentro dela temos uma chave que identifica uma sequencia de valores também*/
@@ -112,5 +120,6 @@ public class PrimeiraClasseJava {
 			System.out.println("Aluno = " + aluno.getNome());
 			System.out.println("Resultado = " + aluno.getAlunoAprovado2() + " com media de = " + aluno.getMediaNota());
 		}
+	}
 	}
 }
