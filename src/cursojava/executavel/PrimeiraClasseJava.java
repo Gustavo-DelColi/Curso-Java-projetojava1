@@ -12,6 +12,7 @@ import cursojava.classes.Aluno;
 import cursojava.classes.Disciplina;
 import cursojava.classes.Secretario;
 import cursojava.constantes.StatusAluno;
+import cursojava.interfaces.PermitirAcesso;
 
 public class PrimeiraClasseJava {
 
@@ -21,12 +22,8 @@ public class PrimeiraClasseJava {
 		String login = JOptionPane.showInputDialog("Informe o login");
 		String senha = JOptionPane.showInputDialog("Informe a senha");
 		
-		Secretario secretario = new Secretario(); /*Diretamente com o objeto*/
-		secretario.setLogin(login);
-		secretario.setSenha(senha);
 		
-		
-		if (secretario.autenticar()) { /* se TRUE acesse se False não acessa*/
+		if (new Secretario().autenticar(login, senha)) { /* se TRUE acesse se False não acessa*/
 			
 		
 		
