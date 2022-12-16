@@ -2,17 +2,15 @@ package cursojava.executavel;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
-import java.util.concurrent.ThreadPoolExecutor.DiscardOldestPolicy;
 
 import javax.swing.JOptionPane;
 
 import cursojava.classes.Aluno;
+import cursojava.classes.Diretor;
 import cursojava.classes.Disciplina;
-import cursojava.classes.Secretario;
+import cursojava.classesauxiliares.FuncaoAutenticacao;
 import cursojava.constantes.StatusAluno;
-import cursojava.interfaces.PermitirAcesso;
 
 public class PrimeiraClasseJava {
 
@@ -22,9 +20,9 @@ public class PrimeiraClasseJava {
 		String login = JOptionPane.showInputDialog("Informe o login");
 		String senha = JOptionPane.showInputDialog("Informe a senha");
 		
-		PermitirAcesso permitirAcesso = new Secretario(login, senha);
 		
-		if (permitirAcesso.autenticar(login, senha)) { /* se TRUE acesse se False não acessa*/
+		
+		if (new FuncaoAutenticacao(new Diretor(login, senha)).autenticar()) { /* Vou traar o contrato para autorizar somente quem realmente tem o contrato*/
 						
 		List<Aluno> alunos = new ArrayList<Aluno>();
 		
