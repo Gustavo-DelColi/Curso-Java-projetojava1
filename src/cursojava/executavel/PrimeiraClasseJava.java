@@ -20,11 +20,9 @@ public class PrimeiraClasseJava {
 
 	/* Main é um metodo auto executavel em Java */
 	public static void main(String[] args) {
-		
 
 		try {
 			lerArquivo();
-
 
 			String login = JOptionPane.showInputDialog("Informe o login");
 			String senha = JOptionPane.showInputDialog("Informe a senha");
@@ -138,7 +136,7 @@ public class PrimeiraClasseJava {
 
 			}
 
-		} catch (NumberFormatException e) {
+		} catch (Exception e) {
 
 			StringBuilder saida = new StringBuilder();
 
@@ -157,12 +155,6 @@ public class PrimeiraClasseJava {
 			}
 
 			JOptionPane.showMessageDialog(null, "Erro de convesão de numero : " + saida.toString());
-		} catch (NullPointerException e) {
-			JOptionPane.showMessageDialog(null, "Opa um null pointer exception : " + e.getClass());
-
-		} catch (ExcecaoProcessarNota e) { /* Captura todas exceções que não prevemos */
-			e.printStackTrace();
-			JOptionPane.showMessageDialog(null, "Erro da excecao customizada : " + e.getClass().getName());
 
 		} finally {/* Sempre é executado ocorrendo erros ou não. Porquê */
 			/*
@@ -173,13 +165,9 @@ public class PrimeiraClasseJava {
 		}
 	}
 
-	public static void lerArquivo() throws ExcecaoProcessarNota {
-		try {
+	public static void lerArquivo() throws FileNotFoundException {
 
-			File fil = new File("c://lines.txt");
-			Scanner scanner = new Scanner(fil);
-		} catch (FileNotFoundException e) {
-			throw new ExcecaoProcessarNota(e.getMessage());
-		}
+		File fil = new File("c://lines.txt");
+		Scanner scanner = new Scanner(fil);
 	}
 }
